@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+}
+body{
+
+
+  padding-bottom: 40px;
+  background-image:url("/static/images/sign-in-background.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-origin: 100px 0px;
+}
+
+.form-signin {
+  padding-top: 150px;
+  width: 150%;
+  max-width: 400px;
+  padding: 15px;
+  margin: auto;
+  border
+}
+.hiddentext
+{
+position: absolute
+top: 120px;
+left: 250px;
+z-index: 0;
+}
+
+#Age{
+  width:100px;
+  padding: 18px 65px;
+  border-style:hidden;
+  border-width: 1px;
+
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
