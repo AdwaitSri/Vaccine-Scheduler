@@ -77,6 +77,19 @@ WSGI_APPLICATION = 'cowinclone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+<<<<<<< HEAD
+=======
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'DB_name',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '',
+    }
+}
+>>>>>>> 7a7c256f7b61c7e1e58a314e47c65a1006ea7791
 
 
 # Password validation
