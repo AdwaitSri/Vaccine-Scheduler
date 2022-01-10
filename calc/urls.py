@@ -4,8 +4,10 @@ from calc import views
 
 app_name='calc'
 urlpatterns=[
-        path('',views.index,name='index'),
-        path('sign-up-page/',views.signup,name='sign-up-page'),
-        
+        path('',views.index,name='user_details'),
+
+        # path('sign-up-page/',views.signup,name='sign-up-page'),
+
+
 
 ]
