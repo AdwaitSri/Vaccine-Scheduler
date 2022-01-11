@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from calc import views
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.index, name='user_details'),
+    # path('formpage/',views.form_name_view,name='form_name'),
     path('calc/', include('calc.urls')),
     path('admin/', admin.site.urls),
 ]
