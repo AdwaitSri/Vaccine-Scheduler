@@ -16,7 +16,7 @@ def user_details(request):
     details_list = PersonalDetails.objects.all()
     detail = {'details':details_list}
     return render(request,'calc/user_details.html', context = detail)
-
+#edit
 def signup(request):
 
 
