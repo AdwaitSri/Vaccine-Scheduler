@@ -11,16 +11,16 @@
 <link href="{% static "css/signin.css" %}" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
-<header class="p-3 bg-dark text-white">
+<header class="p-3 text-white" style='background-color:#083445; height:70px;'>
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap" src="{% static 'images/bootstrap-5-1.svg' %}">
+          <img class="bi me-2" width="40" height="32" zoom=120% role="img" aria-label="Bootstrap" src="{% static 'images/bootstrap-logo1.png' %}">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href='{% url 'calc:index' %}' class="nav-link px-2 text-white">Home</a></li>
+
 
           <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
@@ -44,16 +44,18 @@
 <h1></h1>
   <main class="form-signin">
 
-    <form action='/sign'>
-      <img class="mb-4" src="{% static 'images/bootstrap-5-1.svg' %}" alt="" width="72" height="57">
+    <form method='POST'>
+      {%csrf_token%}
+
+      <img class="mb-4" src="{% static 'images/bootstrap-logo3.png' %}" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+        <input type="text" class="form-control" name='phone' maxlength="10" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Mobile Number</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" name='passwd' id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
 
@@ -66,7 +68,13 @@
       <a href="{% url 'calc:sign-up-page' %}"> New User? Register Here</a>
       <h1></h1>
       <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; Adwait, Siddhartha and Vishruth Project</p>
+      <div>
+        {% for message in messages %}
+        <h4>{{message}}</h4>
+        {% endfor %}
+
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; CVAT Project Development Team</p>
     </form>
   </main>
 

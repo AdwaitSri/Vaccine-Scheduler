@@ -12,23 +12,23 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-<header class="p-3 bg-dark text-white">
+<header class="p-3 text-white" style='background-color:#083445; height:70px;'>
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap" src="bootstrap-5-1.svg">
+          <img class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap" src="{% static 'images/bootstrap-logo1.png' %}">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href='{% url 'calc:index' %}' class="nav-link px-2 text-white">Home</a></li>
 
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
         </ul>
 
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <a <button type="button" href='{% url 'calc:index' %}' class="btn btn-outline-light me-2">Login</button></a>
+          <a <button type="button" href='{% url 'calc:sign-up-page' %}'class="btn btn-warning">Sign-up</button></a>
         </div>
 
       </div>
@@ -36,7 +36,6 @@
   </header>
 
   <body class="" id="mainbody2">
-
 <h1></h1>
 <h1></h1>
   <main class="form-signin" >
@@ -45,22 +44,48 @@
     <h1></h1>
     <h1></h1>
 
-      <div class="h-100 p-3 border rounded-3  ",  style="width:700px; background-color:#f6e9e9d6;",id='mainbox'>
+      <div class="h-100 p-3 border rounded-3  ",  style="width:700px; height: 500px; background-color:#f6e9e9d6;",id='mainbox'>
         <div class="col-6 col-md-4",  id='user_profile'>
           <h2 style='border-bottom: solid 2px black;width:670px;'>User Profile</h2>
           </div>
 
+
+
           <div class="",id='main-text'>
+
+            {% for x in details %}
             <h1></h1>
-            <h6 style='padding-top:20px;'>Name </h6>
-            <h6 style='padding-top:20px;'>Phone</h6>
-            <h6 style='padding-top:20px;'>Age</h6>
-            <h6 style='padding-top:20px;'>Vaccination status</h6>
-            <h6 style='padding-top:20px;'>Gender</h6>
+            <h6 style='padding-top:20px;'>Name: {{x.name}} </h6>
+            <h6 style='padding-top:20px;'>Phone number: {{x.phone_no}}</h6>
+            <h6 style='padding-top:20px;'>Age: {{x.age}}</h6>
+            {% if vaccine.booking_status == 'NOT BOOKED' %}
+            <h6 style='padding-top:20px;'>Vaccination Status: Not Booked</h6> <a href='{% url 'calc:vaccination_page' %}'> Click here to book a slot!</a>
+            {%else%}
+            <h6 style='padding-top:20px;'>Vaccination Staus: Your Vaccination Dose has been Scheduled for {{vaccine.date}}</h6>
+            <ul>
+              <li style='padding-top:10px;'>Location: {{vaccine.location}}</li>
+              <li style='padding-top:10px;'>Time:{{vaccine.time}}</li>
+
+            </ul>
+            {% endif %}
+            <h6 style='padding-top:20px;'>Gender: {{x.gender}}</h6>
+            {%endfor%}
           </div>
+
+
 
         </div>
 
+
+
+
+  </main>
+
+
+
+    </body>
+
+</html>
 
 
 

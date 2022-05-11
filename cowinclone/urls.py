@@ -19,6 +19,8 @@ from calc import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('sign-up-page/',views.signup, name='signup'),
+    path('vaccination_page/',views.vaccination, name='vaccination_page'),
+    path('user_details/', views.user_details, name = "user_details"),
     path('calc/', include('calc.urls')),
     path('admin/', admin.site.urls),
 ]

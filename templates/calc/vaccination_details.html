@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+<link href="{% static "css/headers.css" %}" rel="stylesheet">
+<link href="{% static "css/vaccination_page.css" %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+<header class="p-3 text-white" style='background-color:#083445; height:70px;'>
+    <div class="container",style='padding-bottom:80px;'>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap" src="{% static 'images/bootstrap-logo1.png' %}">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href='{% url 'calc:index' %}' class="nav-link px-2 text-white">Home</a></li>
+
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+
+        <div class="text-end">
+          <a <button type="button" href='{% url 'calc:index' %}' class="btn btn-outline-light me-2">Login</button></a>
+          <a <button type="button" href='{% url 'calc:sign-up-page' %}'class="btn btn-warning">Sign-up</button></a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+<body>
+<main class='mainbox2'>
+
+
+  <div class="row justify-content-md-center">
+
+    <div class="col-md-6">
+          <div class="h-250 p-3 border rounded-3 justify-content-md-center", style="width:850px;height:550px; background-color:#e9e9e9e6;">
+
+            <h2 style='text-align:center;'>Vaccination Appointment</h2>
+            <h2 style='border-bottom: solid 2px black;width:815px;'></h2>
+            <form method='POST'>
+              {%csrf_token%}
+              <!-- <h1 class="h6 mb-3 fw-normal", style='padding-top:4px;'>Please schedule your Appointment</h1> -->
+              <ul>
+
+
+                <li><h5 style='padding-top:20px; padding-left:12px'>Aadhar Card No.</h5></li>
+              </ul>
+
+                <div class="form-floating" style='width:400px;height:25px;padding-left:22px;' >
+
+                  <input type="text" class="form-control" name='regid' maxlength="12" id="floatingInput" aria-describedby="inputGroup-sizing-sm" placeholder="1234 5678 9876">
+                  <label for="floatingInput" style='padding-left:40px;'> ID Card Number</label>
+                </div>
+
+                <ul>
+
+
+                  <li><h5 style='padding-top:50px; padding-left:12px'>Date</h5></li>
+                </ul>
+                <div class="form-floating" style='width:400px;height:30px; padding-left:24px'>
+
+
+                  <input type="date" id="birthday" name="date" min='2022-03-15' style='border-radius:5px;border-style: hidden;height:40px; padding-left:24px' >
+
+
+                </div>
+                <ul>
+
+
+                  <li><h5 style='padding-top:20px; padding-left:12px'>Time Slot</h5></li>
+                </ul>
+                <div class="form-floating" style='width:400px;padding-left:24px;'>
+                  <select class="" name="time" style='height:40px;width:190px; border-radius:5px; border-style:hidden;padding-left:20px;'>
+                    <option value="">Select a time slot</option>
+                    <option value="8:00-11:00 AM">8:00-11:00 AM</option>
+                    <option value="11:00-1:00 PM">11:00-1:00 PM</option>
+                    <option value="1:30-4:00 PM">1:30-4:00 PM</option>
+                    <option value="4:00-6:00 PM">4:00-6:00 PM</option>
+                  </select>
+
+                </div>
+                <ul>
+
+
+                  <li><h5 style='padding-top:20px; padding-left:12px'>Vaccination Center</h5></li>
+                </ul>
+                <div class="form-floating" style='width:400px;padding-left:24px;'>
+                  <select class="" name="location" style='height:40px;width:190px; border-radius:5px; border-style:hidden;padding-left:20px;'>
+                    <option value="">Select a location</option>
+                    <option value="HSR UPHC 560102">HSR UPHC 560102</option>
+                    <option value="Kormangala UPHC 560034">Kormangala UPHC 560034</option>
+                    <option value="Indiranagar UPHC 560038"> Indiranagar UPHC 560038</option>
+                    <option value="M.G. Road UPHC 560001">M.G Road UPHC 560001</option>
+                  </select>
+
+                </div>
+
+
+              <!-- <div class="checkbox mb-3" style='padding-left:30px;padding-top:5px;'>
+                <label>
+                  <input type="checkbox" value="remember-me" > I agree to Terms of Service and Privacy policy
+                </label>
+              </div> -->
+            <div class="" style='padding-left:350px;width:120px; height:25px'>
+                <button class="btn btn-primary" type='submit'>       Submit!     </button>
+            </div>
+            <!-- <button class="btn btn-outline-secondary" type="button">Example button</button> -->
+          </div>
+        </div>
+      </div>
+  </main>
+</body>
+  </html>
