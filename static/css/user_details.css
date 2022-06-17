@@ -1,0 +1,37 @@
+html,
+body {
+  height: 100%;
+}
+body{
+
+
+  padding-bottom: 40px;
+
+  background-image:url("/static/images/sign-in-background.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-origin: 100px 0px;
+}
+
+.form-signin {
+  padding-top: 100px;
+  width: 150%;
+  height: 500px;
+  max-width: 680px;
+
+  margin: auto;
+  border
+}
+
+#maintext{
+  padding-top: 50px;
+
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
