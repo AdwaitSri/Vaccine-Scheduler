@@ -26,7 +26,7 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TEMPLATE_DEBUG=True
+DEBUG = TEMPLATE_DEBUG=False
 
 ALLOWED_HOSTS = []
 
