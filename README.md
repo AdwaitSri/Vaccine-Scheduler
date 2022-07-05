@@ -16,7 +16,7 @@
   * Bootstrap CSS Libraries
   * HttpResponse
  
-
+Note: The dropdowns and calendar date selection tool are not visible in the recording. Time, Location and Date selections are done via a dropdown selector.
 
 ## Code Execution:
 
